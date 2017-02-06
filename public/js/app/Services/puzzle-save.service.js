@@ -18,11 +18,11 @@
                     moves: moves,
                     time: time
                 }
-                $window.localStorage['isentia.puzzle'] = JSON.stringify(state);
+                $window.localStorage['angular.puzzle'] = JSON.stringify(state);
             }
 
             this.retrieve = function() {
-                return JSON.parse($window.localStorage['isentia.puzzle']);
+                return JSON.parse($window.localStorage['angular.puzzle']);
             }
 
             return this;

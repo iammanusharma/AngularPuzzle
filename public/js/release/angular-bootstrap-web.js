@@ -123,11 +123,11 @@
                     moves: moves,
                     time: time
                 }
-                $window.localStorage['isentia.puzzle'] = JSON.stringify(state);
+                $window.localStorage['angular.puzzle'] = JSON.stringify(state);
             }
 
             this.retrieve = function() {
-                return JSON.parse($window.localStorage['isentia.puzzle']);
+                return JSON.parse($window.localStorage['angular.puzzle']);
             }
 
             return this;
@@ -357,7 +357,7 @@
                     timer.stop();
                     // reset our internals
                     this.moves = 0;
-                    $window.localStorage.removeItem('isentia.puzzle');
+                    $window.localStorage.removeItem('angular.puzzle');
 
                     // disable dragging/sorting
                     $('.puzzle-board').sortable('destroy');
@@ -387,7 +387,7 @@
                 instance: function(rows, pieces, width, board) {
                     var puzzle = new Puzzle(rows, pieces, width, board);
                     puzzle.generate();
-                    if ($window.localStorage['isentia.puzzle']) {
+                    if ($window.localStorage['angular.puzzle']) {
                         // resotre the puzzle piece order from previously save positions
                         puzzle.retrieve();
                         $rootScope.$broadcast('puzzle.retrieved', puzzle.moves);
