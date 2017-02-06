@@ -4,6 +4,7 @@
     </div>
 </div>
 <div class="container-fluid">
+    <div class="row h2 p-50">Drag and drop the images on right to match the given image</div>
     <div class="row">
         <div class="col-lg-3">
             <div class="p-50">
@@ -16,16 +17,9 @@
         </div>
         <div class="col-lg-9">
             <div class="p-50 text-center">
-                <!-- this is our puzzle board. Puzzle directive will only accept this as an element.
-                        attributes:
-                            board: our image asset which will be broken up
-                            rows: the number of rows/cols there will be (we are creating a square puzzle for this edition)
-                            pieces: how many pieces the puzzle will have (must be the square of the rows in this edition)
-                            width: must be equally divisble by the rows value (i.e. no remainder)
-                -->
+                <div ng-show="complete" class="m-t-15 font-bold text-uppercase fs-24" ng-show="playing">Total Time taken: {{time}} seconds</div>
                 <puzzle board="img/isentia.jpg" rows="3" pieces="9" width="540"></puzzle>
                 <div class="m-t-15 font-bold text-uppercase fs-24" ng-show="playing">Total Moves: {{moves}}</div>
-                <div class="m-t-15 font-bold text-uppercase fs-24" ng-show="playing">Time: {{time}}</div>
             </div>
         </div>
     </div>

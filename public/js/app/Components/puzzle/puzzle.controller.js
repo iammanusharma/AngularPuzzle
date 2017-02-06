@@ -27,7 +27,7 @@
                 $scope.moves = moves;
                 $scope.continue = true;
             });
-
+            
             $scope.$on('puzzle.complete', function(event, time) {
                 $scope.$apply(function() {
                     $scope.complete = true;
